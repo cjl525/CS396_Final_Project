@@ -66,7 +66,7 @@ def classify_token(token):
 
 # Lexer
 # Function to be used in parser.py to get the list of tuples to make ast trees
-def lexer(code)
+def lexer(code):
     #remove comments
     code = "\n".join(line.split(';')[0] for line in code.splitlines())
     # split into a list
