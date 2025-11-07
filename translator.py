@@ -20,7 +20,7 @@ def translate(ast):
     if isinstance(ast, str):
         return ast
 
-    # arithmetic: (+ 3 2) → (3 + 2)
+    # arithmetic: (+ 3 2) to (3 + 2)
     if ast[0] in ['+', '-', '*', '/']:
         left = translate(ast[1])
         right = translate(ast[2])
@@ -37,7 +37,7 @@ def translate(ast):
     if ast[0] == 'display':
         return f"print({translate(ast[1])})"
 
-    # quoted lists: '(1 2 3) → [1, 2, 3]
+    # quoted lists: '(1 2 3) to [1, 2, 3]
     if ast[0] == 'quote':
         quoted = ast[1]
         if isinstance(quoted, list):
@@ -54,7 +54,7 @@ def translate(ast):
         else:
             return f"({head}, {tail})"
 
-    # generic function calls: (square 5) → square(5)
+    # generic function calls: (square 5) to square(5)
     if isinstance(ast[0], str):
         func_name = ast[0]
         args = ", ".join(translate(arg) for arg in ast[1:])
