@@ -29,7 +29,8 @@ def is_number(token):
         int(token)
         return True
     except ValueError:
-        try float(token)
+        try:
+        float(token)
         return True
     except ValueError:
         return False
