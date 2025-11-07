@@ -3,7 +3,7 @@ def tokenize(code):
     # replacing all '(' with ' ( ' and ')' with ' ) '
     code = code.replace('(', ' ( ').replace(')', ' ) ')
     tokens = code.split()
-    print(tokens)
+    return tokens
 
 
 
@@ -29,10 +29,11 @@ def is_number(token):
         int(token)
         return True
     except ValueError:
-        try float(token)
-        return True
-    except ValueError:
-        return False
+        try:
+            float(token)
+            return True
+        except ValueError:
+            return False
 
 def is_quote(token):
     return token =="'"
@@ -65,12 +66,12 @@ def classify_token(token):
 
 # Lexer
 # Function to be used in parser.py to get the list of tuples to make ast trees
-def lexer(code)
+def lexer(code):
     #remove comments
     code = "\n".join(line.split(';')[0] for line in code.splitlines())
     # split into a list
     tokenized_code_list = tokenize(code)
     # classify everything into list 'tokens_list'
     tokens_list = [classify_token(individual_token) for individual_token in tokenized_code_list]
-    # tokenized_list is a list of tuples
-    return tokenized_list
+    # tokens_list is a list of tuples
+    return tokens_list
