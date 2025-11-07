@@ -73,5 +73,5 @@ def lexer(code):
     tokenized_code_list = tokenize(code)
     # classify everything into list 'tokens_list'
     tokens_list = [classify_token(individual_token) for individual_token in tokenized_code_list]
-    # tokenized_list is a list of tuples
-    return tokenized_list
+    # tokens_list is a list of tuples
+    return tokens_list
