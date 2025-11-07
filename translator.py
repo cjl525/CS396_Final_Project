@@ -2,7 +2,7 @@
 # takes the Scheme source and builds AST in memory, then outputs Python code and makes output.py
 
 from parser import parse
-from lexer import tokenize
+from lexer import lexer
 
 # converts AST nodes into Python syntax
 def translate(ast):
