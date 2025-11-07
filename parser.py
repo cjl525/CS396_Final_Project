@@ -1,4 +1,4 @@
-from lexer import tokenize
+from lexer import lexer
 
 def parse(tokens):
     # no tokens left? (empty input)
@@ -56,7 +56,7 @@ if __name__ == "__main__":
         code = f.read()
 
     # tokenize the Scheme code
-    tokens = tokenize(code)
+    tokens = lexer(code)
 
     # now parse tokens into AST
     ast = parse(tokens)
