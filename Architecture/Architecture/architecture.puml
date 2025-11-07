@@ -1,0 +1,24 @@
+@startuml
+skinparam backgroundColor #1E1E1E
+skinparam defaultFontColor white
+skinparam rectangle {
+  BackgroundColor #2E2E2E
+  BorderColor #CCCCCC
+  FontColor white
+  RoundCorner 10
+}
+skinparam arrowColor #00BFFF
+skinparam ArrowThickness 2
+
+rectangle "Scheme Source File\n(scheme_input.scm)" as S
+rectangle "Lexer\n(Tokenizes source → list of tuples)" as L
+rectangle "Parser\n(Builds AST in memory)" as P
+rectangle "Translator\n(AST → Python code string)" as T
+rectangle "output.py\n(Generated Python File)" as G
+
+S -right-> L : read()
+L -right-> P : tokens (in memory)
+P -right-> T : AST (in memory)
+T -right-> G : write()
+
+@enduml
