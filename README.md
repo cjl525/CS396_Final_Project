@@ -2,5 +2,5 @@
 CS396 Final Project
 
 # Members
-     Christian Lamb, 
+     Christian Lamb
      McKay Hartman
