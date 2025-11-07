@@ -3,7 +3,7 @@ def tokenize(code):
     # replacing all '(' with ' ( ' and ')' with ' ) '
     code = code.replace('(', ' ( ').replace(')', ' ) ')
     tokens = code.split()
-    print(tokens)
+    return tokens
 
 
 
