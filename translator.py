@@ -68,9 +68,16 @@ if __name__ == "__main__":
     with open("scheme_input.scm") as f:
         code = f.read()
 
-    tokens = tokenize(code)
-    ast = parse(tokens)
-    py_code = translate(ast)
+    tokens = lexer(code)
+
+    # parse multiple expressions
+    ast_list = []
+    while tokens:
+        ast_list.append(parse(tokens))
+
+    # translate each block and combine
+    py_blocks = [translate(ast) for ast in ast_list]
+    py_code = "\n".join(py_blocks)
 
     with open("output.py", "w") as out:
         out.write(py_code + "\n")

@@ -58,9 +58,12 @@ if __name__ == "__main__":
     # tokenize the Scheme code
     tokens = lexer(code)
 
-    # now parse tokens into AST
-    ast = parse(tokens)
+    # parse all expressions
+    ast_list = []
+    while tokens:
+        ast_list.append(parse(tokens))
 
     # Display
     print("[parser.py] AST Output:")
-    print(ast)
+    for ast in ast_list:
+        print(ast)
