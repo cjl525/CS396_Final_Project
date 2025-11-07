@@ -30,10 +30,10 @@ def is_number(token):
         return True
     except ValueError:
         try:
-        float(token)
-        return True
-    except ValueError:
-        return False
+            float(token)
+            return True
+        except ValueError:
+            return False
 
 def is_quote(token):
     return token =="'"
