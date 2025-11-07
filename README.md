@@ -1,6 +1,6 @@
 # CS396_Final_Project
 
-This project reads Scheme source code, tokenizes it, then it builds an Abstract Syntax Tree (AST) in memory, and then translates it into equivalent Python code. Demonstrating how two different programming paradigms (functional and imperative/OOP) can interoperate.
+This project reads Scheme source code, tokenizes it, then it builds an Abstract Syntax Tree (AST) in memory, the next thing it does is translates it into equivalent Python code. This shows how two different programming paradigms (functional and imperative/OOP) can interoperate.
 
 # Members:
      Christian Lamb
